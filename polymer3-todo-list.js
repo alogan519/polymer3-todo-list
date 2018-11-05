@@ -1,6 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import {} from '@polymer/polymer/lib/elements/dom-repeat.js';
 import './polymer3-todo.js';
+import './polymer3-todo-add.js';
 
 /**
  * `polymer3-todo-list`
@@ -18,6 +19,7 @@ class Polymer3TodoList extends PolymerElement {
 			  display: block;
 			}
 			</style>
+			<polymer3-todo-add></polymer3-todo-add>
 			<dom-repeat items="[[todos]]" as="todo">
 				<template>
 					<polymer3-todo todo="[[todo]]"></polymer3-todo>
@@ -39,6 +41,16 @@ class Polymer3TodoList extends PolymerElement {
                 }
             }
         }
+    }
+
+    ready() {
+        super.ready();
+        this.addEventListener('todo-add', this._onTodoAdd);
+    }
+
+    _onTodoAdd(event) {
+        var name = event.detail.name;
+        this.push('todos', {name:name});
     }
 }
 
