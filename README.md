@@ -1,3 +1,7 @@
+Google Doc Instructions
+https://docs.google.com/document/d/1LBlUlI_j6783VpiaQyR-wjJKqUrdw4b-0aW3iPxv_DU/edit#
+
+
 # \<polymer3-todo-list\>
 
 Create your first polymer 3 element with this todo list
